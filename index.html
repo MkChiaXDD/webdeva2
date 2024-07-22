@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Rice</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file for styling -->
+</head>
+<body>
+    <audio id="winSound" src="audio/win.mp3"></audio>
+    <audio id="loseSound" src="audio/lose.mp3"></audio>
+    <audio id="wrongSound" src="audio/wrong.mp3"></audio>
+    <audio id="fireSound" src="audio/fire.mp3"></audio>
+    <!-- Main Topic -->
+    <header>
+        <h1>Chicken Rice</h1> <!-- Main heading of the page -->
+    </header>
+    
+     <!-- Navigation Menu -->
+    <nav id="main-nav" class="fade-in">
+        <button id="hamIcon">&#9776; Menu</button>
+        <ul>
+            <li><button id="page1btn">Ingredients and Recipe</button></li>
+            <li><button id="page2btn">Popular Restaurants and Stalls</button></li>
+            <li><button id="page3btn">History Of Chicken Rice</button></li>
+            <li><button id="page4btn">Chicken Rice Cooking Game</button></li>
+        </ul>
+    </nav>
+
+
+    <!-- Page Content -->
+    <div id="pagecontainer">
+        <div class="page" id="page1"> <!-- Ingredients and Recipe page -->
+            <section id="main-content">
+                <h2>Ingredients and Recipe</h2>
+                <p>Select a type of chicken to view the recipe.</p>
+                <div id="subnav" class="fade-in">
+                    <button id="subpage1btn">Steamed Chicken</button>
+                    <button id="subpage2btn">Roasted Chicken</button>
+                    <button id="subpage3btn">Char Siew</button>
+                    <button id="subpage4btn">Watch How To Make Chicken Rice</button>
+                </div>
+            </section>
+
+            <section class="subpage" id="subpage1">
+                <button class="backbtn">Back to Ingredients and Recipe</button>
+                <h3>Steamed Chicken</h3>
+                <p>Chicken Rice is a popular dish that is simple yet delicious. Below are the ingredients and recipe to make this dish.</p>
+                <img src="images/steamedchicken.jpg" alt="Chicken Rice"> <!-- Image of Chicken Rice -->
+                <h3>Ingredients for Steamed Chicken:</h3>
+                <ul>
+                    <!-- List of ingredients for Chicken -->
+                    <li>1 whole chicken (about 3-4 lbs)</li>
+                    <li>1 tablespoon kosher salt</li>
+                    <li>4-5 slices of ginger</li>
+                    <li>Garlic</li>
+                    <li>4-5 green onions, trimmed</li>
+                    <li>2-3 garlic cloves, smashed</li>
+                    <li>Water (enough to cover the chicken)</li>
+                    <li>Ice water (for shocking the chicken)</li>
+                </ul>
+                <h3>Ingredients for Rice:</h3>
+                <ul>
+                    <!-- List of ingredients for Rice -->
+                    <li>2 cups jasmine rice, rinsed and drained</li>
+                    <li>2-3 tablespoons chicken fat or vegetable oil</li>
+                    <li>4-5 garlic cloves, minced</li>
+                    <li>2-3 slices ginger</li>
+                    <li>2 cups chicken broth (reserved from cooking the chicken)</li>
+                    <li>1 teaspoon sesame oil</li>
+                    <li>1 teaspoon salt</li>
+                </ul>
+                <h3>Recipe:</h3>
+                <ol>
+                    <!-- Step-by-step recipe instructions -->
+                    <li>Rub the chicken with salt, rinse, and pat dry. In a large pot, add the chicken, ginger, green onions, and garlic. Cover with water and bring to a boil, then simmer for 30-40 minutes. Place the chicken in ice water for 5-10 minutes to keep the skin tender. Once cooled, chop into serving pieces and reserve the broth for the rice and soup.</li>
+                    <li>Heat vegetable oil in a large pot or rice cooker over medium heat. Add minced garlic and ginger, sauté until fragrant. Add rinsed jasmine rice, stir to coat with oil. Pour in 2 cups of reserved broth and a bit of salt. Cook until rice is tender and fluffy.</li>
+                    <li>Serve the chicken and rice with soy sauce, chili sauce, and cucumber slices.</li>
+                </ol>
+            </section>
+
+            <section class="subpage" id="subpage2">
+                <button class="backbtn">Back to Ingredients and Recipe</button>
+                <h3>Roasted Chicken</h3>
+                <p>Details about roasted chicken...</p>
+                <img src="images/roastedchicken.jpg" alt="Chicken Rice"> <!-- Image of Chicken Rice -->
+                <h3>Ingredients for Roasted Chicken:</h3>
+                <ul>
+                    <!-- List of ingredients for Roasted Chicken -->
+                    <li>1 Chicken (Whole) – gutted and cleaned with neck and feet removed</li>
+                    <li>1 Tsp of Honey</li>
+                    <li>1 Tsp of Maltose</li>
+                    <li>1/2 Tsp of Molasses</li>
+                    <li>1/2 Tsp of Five spice powder</li>
+                    <li>Few dashes of Ground white pepper</li>
+                    <li>1 Tbsp of Ginger juice</li>
+                    <li>2 Tbsp of Light soy sauce</li>
+                    <li>2 Spring onion stalks</li>
+                    <li>5-6 slices of Ginger (5mm thick)</li>
+                    <li>Handful of Kosher or any coarse Salt – for exfoliating the Chicken</li>
+                </ul>
+                <h3>Ingredients for Rice:</h3>
+                <ul>
+                    <!-- List of ingredients for Rice -->
+                    <li>2 cups of Long grain rice</li>
+                    <li>2 Tsp of Salt</li>
+                    <li>5-6 slices of Ginger (2-3mm thick)</li>
+                    <li>2 cloves of Garlic – finely diced</li>
+                    <li>2 1/4 cups of Chicken stock</li>
+                    <li>1 Pandan leaf (knotted)</li>
+                    <li>2 Tbsp of Chicken fat with skin attached – obtained by trimming excess fat from Chicken</li>
+                    <li>2 Tbsp of Water</li>
+                </ul>
+                <h3>Recipe:</h3>
+                <ol>
+                    <!-- Step-by-step recipe instructions -->
+                    <li>
+                        Trim off any excess fat and skin from the chicken and keep it aside (this will be used for the rice in Step 2). The next thing to do is to “exfoliate“! Exfoliating the chicken helps remove any trapped dirt or yucky stuff off the skin. Grab a handful of coarse or kosher salt and start rubbing all over the skin but at the same time being careful not to tear or damage the skin. You should see a smooth clean skin once completed. The next step is to give your chicken a workout! There is a theory that when most chickens are “killed“, their muscles tend to tense up and constrict. By giving the legs and wings gentle pulls and stretches, it should ease the muscle tension and thus give you a more juicy and tender soft flesh at the end.
+                    </li>
+                    <li>
+                        Combine the Honey, Maltose, Molasses, Five spice powder, White pepper, Ginger juice, and Light soy sauce in a bowl. Stir to mix the marinade and generously rub all over the chicken including the cavity. Stuff the Spring onions and Ginger slices into the cavity. Tie the two legs together with kitchen twine to help cover the cavity. Leave the marinated chicken to air dry in the refrigerator for at least 6-8 hours or overnight.
+                    </li>
+                    <li>
+                        Take the chicken out 30-45 mins before roasting to allow it to reach room temperature. Preheat oven to 220 degrees Celsius. When the oven is hot enough, turn it down to 200 degrees Celsius and place the roasting pan with chicken into the oven for 20 minutes. After 20 minutes, reduce the heat to 180 degrees Celsius and roast for a further 30-45 minutes (depending on the size of the chicken) until the skin is crisp and dark brown in color. Once done, take the chicken out to rest before cutting it into pieces.
+                    </li>
+                </ol>
+            </section>
+            <section class="subpage" id="subpage3">
+                <button class="backbtn">Back to Ingredients and Recipe</button>
+                <h3>Char Siew</h3>
+                <p>Details about char siew...</p>
+                <img src="images/charsiew.jpg" alt="Chicken Rice"> <!-- Image of Chicken Rice -->
+                <h3>Ingredients for Char Siew:</h3>
+                <ul>
+                    <!-- List of ingredients for Chicken -->
+                    <li>3 Boneless chicken thighs</li>
+                    <li>2 tbsp Light Soy sauce</li>
+                    <li>2 tbsp Rice wine</li>
+                    <li>1 tbsp Cornstarch</li>
+                    <li>1 tbsp Grated garlic</li>
+                    <li>1 tbsp Grated ginger</li>
+                    <li>1 tbsp Cooking cream</li>
+                    <li>Salt to taste</li>
+                </ul>
+                <h3>Char Siew Sauce:</h3>
+                <ul>
+                    <!-- List of ingredients for Char Siew Sauce -->
+                    <li>2 tbsp Light Soy sauce</li>
+                    <li>1 tbsp Oyster sauce</li>
+                    <li>1 tbsp Grated garlic</li>
+                    <li>2 tbsp Raw sugar</li>
+                    <li>1 tbsp Cooking wine</li>
+                    <li>2 tbsp Sesame oil</li>
+                    <li>2 tbsp Honey</li>
+                </ul>
+                <h3>Recipe:</h3>
+                <ol>
+                    <!-- Step-by-step recipe instructions -->
+                    <li>Wash and drain dry chicken thighs. Slice lightly on the veins to break it, so the chicken meat will not roll up while cooking and for better texture too.</li>
+                    <li>Marinate the chicken with light soy sauce, rice wine, cornstarch, grated garlic, grated ginger, and salt to taste. Mix and massage the ingredients so that they get better absorption by the meat. Transfer to the chiller and let it sit for 2 hours.</li>
+                    <li>In a mixing bowl, combine sauce mixture ingredients and mix well. Set aside.</li>
+                    <li>Transfer chicken out from the chiller at least ½ hour before cooking.</li>
+                    <li>Drizzle some oil in the pan, add chicken thighs in and pan-fry till golden brown and slightly charred. Add in sauce mixture and stir to mix. Cover and let it braise for a few minutes until the sauce thickens and dries up.</li>
+                    <li>Add in honey last, just to give a final coat to the chicken. This gives the chicken a shiny glaze and a hint of honey sweetness.</li>
+                </ol>
+            </section>
+            <section class="subpage" id="subpage4">
+                <button class="backbtn">Back to Ingredients and Recipe</button>
+                <h3>Watch how to make Chicken Rice</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/THRhrh-ChBE?si=SmGk_bb618C6UxjO" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> <!-- YouTube video embed -->
+                </div>
+            </section>
+        </div>
+        <div class="page" id="page2"> <!-- Popular Restaurants and Stalls page -->
+    <section>
+        <h2>Popular Restaurants and Stalls</h2>
+        <p>Here are some popular places where you can enjoy Chicken Rice:</p>
+        <div class="section-container">
+            <div class="section" id="restaurant1">
+                <h3>Tiong Bahru Hainanese Boneless Chicken Rice</h3>
+                <p><a href="https://maps.app.goo.gl/UXm2gN8ShW1iYsZ16" target="_blank">Locate Shop</a></p>
+                <img src="images/tb.jpg" alt="Tiong Bahru Hainanese Boneless Chicken Rice">
+                <p>Located in the heart of Tiong Bahru, this stall is famous for its succulent, boneless chicken and fragrant rice. Established over 20 years ago, it remains a favorite among locals and tourists alike.</p>
+                <p><strong>Customer Reviews:</strong> "The best chicken rice I've ever had!" - Jane Doe</p>
+                <p><strong>Signature Dish:</strong> Hainanese Boneless Chicken Rice</p>
+                <p><strong>Opening Hours:</strong> 10:00 AM - 8:00 PM daily</p>
+                <p><strong>Price Range:</strong> $5 - $10</p>
+            </div>
+            <div class="section" id="restaurant2">
+                <h3>Hawker Chan Soya Sauce Chicken Rice & Noodle</h3>
+                <p><a href="https://maps.app.goo.gl/f874GVU2gHmveQmx6" target="_blank">Locate Shop</a></p>
+                <img src="images/hawkerchan.jpg" alt="Hawker Chan Soya Sauce Chicken Rice & Noodle">
+                <p>Hawker Chan is world-renowned for its Michelin-starred soya sauce chicken. With affordable prices and exceptional taste, it’s a must-visit for any chicken rice lover.</p>
+                <p><strong>Customer Reviews:</strong> "Incredible value for a Michelin-star meal!" - John Smith</p>
+                <p><strong>Signature Dish:</strong> Soya Sauce Chicken Rice</p>
+                <p><strong>Opening Hours:</strong> 11:00 AM - 9:00 PM daily</p>
+                <p><strong>Price Range:</strong> $3 - $7</p>
+            </div>
+            <div class="section" id="restaurant3">
+                <h3>Ji De Lai Hainanese Chicken Rice</h3>
+                <p><a href="https://maps.app.goo.gl/m8ahxUzE8FSDE3Xt6" target="_blank">Locate Shop</a></p>
+                <img src="images/jdl.jpg" alt="Ji De Lai Hainanese Chicken Rice">
+                <p>Ji De Lai offers a traditional Hainanese chicken rice experience. Known for its tender chicken and rich, flavorful rice, it's a beloved spot for many.</p>
+                <p><strong>Customer Reviews:</strong> "Authentic and delicious!" - Mary Lee</p>
+                <p><strong>Signature Dish:</strong> Hainanese Chicken Rice</p>
+                <p><strong>Opening Hours:</strong> 9:00 AM - 7:00 PM daily</p>
+                <p><strong>Price Range:</strong> $4 - $8</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+        <div class="page" id="page3"> <!-- Watch How to Make Chicken Rice page -->
+            <section>
+                <h2 id="history-title">History of Chicken Rice</h2>
+                <div class="timeline-container">
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 9</div>
+                        <img src="images/history/pic1.jpg" alt="pic1" style="width:100%">
+                        <div class="caption-container">
+                            <h3>Pre-20th Century: Origins</h3>
+                            <p>Hainan Province, China: The dish known as Wen Chang Ji, a boiled or poached chicken served with a citrusy, ginger-garlic dip, originates in Hainan.</p>
+                        </div>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 9</div>
+                        <img src="images/history/pic2.jpg" alt="pic2" style="width:100%">
+                        <div class="caption-container">
+                            <h3>Early 20th Century: Introduction to Singapore</h3>
+                            <p>1920s-1930s: Hainanese immigrants bring Wen Chang Ji to Singapore. They settle in the Hainanese quarters of Middle Road, Purvis Street, and Seah Street.</p>
+                        </div>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 9</div>
+                        <img src="images/history/pic3.jpg" alt="pic3" style="width:100%">
+                        <div class="caption-container">
+                            <h3>1940s: Evolution Begins</h3>
+                            <p>1940: The first known chicken rice restaurant in Singapore, Yet Con, opens. It serves a basic version of chicken rice with poached chicken, fragrant oily rice, cucumber slices, and ginger-chili sauce.</p>
+                        </div>
+                    </div>
+                        
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 9</div>
+                        <img src="images/history/pic4.jpg" alt="pic4" style="width:100%">
+                        <div class="caption-container">
+                            <h3>1950s: The Rise of Modern Chicken Rice</h3>
+                            <p>1950s: The chicken rice recipe is revolutionized with a Cantonese-influenced poaching method, resulting in tender, juicy chicken. This new style becomes popular.<br>1951: Swee Kee Chicken Rice, founded by Moh Lee Twee, who studied under Wong Yi Guan, opens. Swee Kee popularizes the modern version of chicken rice, becoming a benchmark for the dish.</p>
+                        </div>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">5 / 9</div>
+                        <img src="images/history/pic5.jpg" alt="pic5" style="width:100%">
+                        <div class="caption-container">
+                            <h3>1970s: Chicken Rice Gains Prominence</h3>
+                            <p>1971: Chatterbox introduces a luxury version of chicken rice at the Mandarin Hotel, priced at $3.50. It emphasizes high-quality ingredients and skilled preparation, elevating the dish's status.</p>
+                        </div>
+                    </div>
+                        
+                    <div class="mySlides">
+                        <div class="numbertext">6 / 9</div>
+                        <img src="images/history/pic6.jpg" alt="pic6" style="width:100%">
+                        <div class="caption-container">
+                            <h3>1980s: Continued Popularity</h3>
+                            <p>1983: Chatterbox's high-end chicken rice becomes immensely popular, generating $1.6 million in revenue. This period sees the normalization of boneless chicken rice and the introduction of chicken rice sets.</p>
+                        </div>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">7 / 9</div>
+                        <img src="images/history/pic7.jpg" alt="pic7" style="width:100%">
+                        <div class="caption-container">
+                            <h3>1990s: End of an Era</h3>
+                            <p>1997: Swee Kee Chicken Rice closes abruptly, leaving behind a legacy of transforming chicken rice into a mainstream dish.</p>
+                        </div>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">8 / 9</div>
+                        <img src="images/history/pic8.jpg" alt="pic8" style="width:100%">
+                        <div class="caption-container">
+                            <h3>21st Century: Adaptation and Continuity</h3>
+                            <p>2000s-2010s: Many traditional stalls continue to offer both steamed and roasted chicken rice, catering to evolving customer preferences.<br>2021: Yet Con, the oldest known chicken rice restaurant, closes.<br>2023: Rui Ji Traditional Chicken Rice and Curry Noodle opens in Toa Payoh, run by distant relatives of Swee Kee’s founder, using the original recipe.</p>
+                        </div>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">9 / 9</div>
+                        <img src="images/history/pic9.jpg" alt="pic9" style="width:100%">
+                        <div class="caption-container">
+                            <h3>Present Day: A Cultural Icon</h3>
+                            <p>2024: Chicken rice remains a beloved dish in Singapore, representing the nation’s diverse culinary heritage. It is served in both humble hawker stalls and upscale restaurants, with continuous innovation and adaptation.</p>
+                        </div>
+                    </div>
+                        
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <button class="demo-btn" onclick="currentSlide(1)">Pre-20th Century</button>
+                    </div>
+                    <div class="column">
+                        <button class="demo-btn" onclick="currentSlide(2)">Early 20th Century</button>
+                    </div>
+                    <div class="column">
+                        <button class="demo-btn" onclick="currentSlide(3)">1940s</button>
+                    </div>
+                    <div class="column">
+                        <button class="demo-btn" onclick="currentSlide(4)">1950s</button>
+                    </div>
+                    <div class="column">
+                        <button class="demo-btn" onclick="currentSlide(5)">1970s</button>
+                    </div>
+                    <div class="column">
+                        <button class="demo-btn" onclick="currentSlide(6)">1980s</button>
+                    </div>
+                    <div class="column">
+                        <button class="demo-btn" onclick="currentSlide(7)">1990s</button>
+                    </div>
+                    <div class="column">
+                        <button class="demo-btn" onclick="currentSlide(8)">21st Century</button>
+                    </div>
+                    <div class="column">
+                        <button class="demo-btn" onclick="currentSlide(9)">Present Day</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="page" id="page4"> <!-- Chicken Rice Cooking Game page -->
+            <section id="game">
+                <h2>Chicken Rice Cooking Game</h2>
+                <div id="instructions">
+                    <p>Follow the steps to prepare your chicken rice dish. Be careful with the timing to get the best score!</p>
+                </div>
+                <div id="controls">
+                    <div class="control-group">
+                        <div class="control" id="startCookRice">Start Cooking Rice</div>
+                        <div class="control" id="stopCookRice">Stop Cooking Rice</div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control" id="startCookChicken">Start Cooking Chicken</div>
+                        <div class="control" id="stopCookChicken">Stop Cooking Chicken</div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control" id="serveDish">Serve Dish</div>
+                    </div>
+                </div>
+                <div id="status">
+                    <div class="control-group">
+                        <p id="chickenStatus">Chicken: Raw</p> <!-- Initial status of Chicken -->
+                        <img id="imageChickenStatus" src="images/raw_chicken.jpg" alt="Chicken Status"> <!-- Image of raw chicken -->
+                    </div>
+                    <div class="control-group">
+                        <p id="riceStatus">Rice: Uncooked</p> <!-- Initial status of Rice -->
+                        <img id="imageRiceStatus" src="images/uncooked_rice.jpg" alt="Rice Status"> <!-- Image of uncooked rice -->
+                    </div>
+                    <p id="score">Score: 0</p> <!-- Initial score -->
+                </div>
+                <div id="result"></div> <!-- Area to display result of the game -->
+                <div id="restartGame">Restart Game</div> <!-- Button to restart the game -->
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Chicken Rice. All rights reserved.</p> <!-- Footer text -->
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript file for functionality -->
+</body>
+</html>

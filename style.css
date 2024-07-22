@@ -1,0 +1,615 @@
+/* Apply box-sizing globally to include padding and border in element's total width and height */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #121212;
+    color: #e0e0e0;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* Base font size for scaling */
+}
+
+/* Header styling */
+header {
+    background-color: #1f1f1f;
+    color: #ff9800;
+    padding: 0.75em;
+    text-align: center;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Responsive Header Padding */
+@media screen and (max-width: 50em) { /* 800px equivalent */
+    header {
+        padding: 0.5em;
+    }
+}
+
+/* Fade-in and Fade-out animations */
+.page {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.subpage {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.fade-in2 {
+    opacity: 1;
+}
+
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+/* Navigation styling */
+#main-nav {
+    position: relative;
+    background-color: #333;
+    color: white;
+    padding: 0.625em;
+    width: 100%;
+    text-align: center;
+}
+
+#main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#main-nav ul li {
+    margin: 0 0.5em;
+    position: relative;
+}
+
+#main-nav ul li button {
+    background: none;
+    color: white;
+    border: none;
+    padding: 0.625em;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#main-nav ul li button:hover {
+    background-color: #555;
+    border-radius: 0.625em;
+}
+
+/* Style for the active page button */
+#main-nav ul li button.active {
+    color: #ff9800;
+}
+
+#main-nav ul li button.active:hover {
+    color: #ff9800;
+}
+
+/* Hamburger menu icon */
+#hamIcon {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Simplified responsive video container */
+.video-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+/* Footer styling */
+footer {
+    background-color: #1f1f1f;
+    color: #ff9800;
+    text-align: center;
+    padding: 0.625em 0;
+    width: 100%;
+}
+
+/* Main content styling */
+#main-content {
+    display: block;
+    background-color: #1e1e1e;
+    padding: 1.25em;
+    border-radius: 0.625em;
+    width: calc(100% - 2em); /* Subtracting padding from width */
+    max-width: 50em;
+    margin: 1.25em auto;
+    text-align: center;
+}
+
+#main-content h2 {
+    color: #ff9800;
+}
+
+/* Sub-navigation styling */
+#subnav {
+    margin-top: 1.25em;
+    text-align: center;
+}
+
+#subnav button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 0.625em;
+    margin: 0.3125em;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 0.3125em;
+}
+
+#subnav button:hover {
+    background-color: #777;
+}
+
+/* Subpages styling */
+.subpage {
+    display: none;
+    background-color: #1e1e1e;
+    padding: 1.25em;
+    border-radius: 0.625em;
+    width: calc(100% - 2.5em); /* Subtracting padding from width */
+    max-width: 50em;
+    margin: 1.25em auto;
+}
+
+.subpage h3 {
+    color: #ff9800;
+}
+
+.subpage img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.625em;
+    margin-bottom: 1.25em;
+}
+
+.subpage ul, .subpage ol {
+    text-align: left;
+    margin: 1.25em 0;
+    padding: 0 1.25em;
+}
+
+/* Back button styling */
+.backbtn {
+    background-color: #ff9800;
+    color: #1e1e1e;
+    border: none;
+    padding: 0.625em;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 0.3125em;
+    margin-bottom: 1.25em;
+}
+
+.backbtn:hover {
+    background-color: #ffb74d;
+}
+
+/* Game page styling */
+#game {
+    margin: 1.25em auto;
+    padding: 1.25em;
+    background-color: #1e1e1e;
+    width: 90%;
+    max-width: 50em;
+    border-radius: 0.625em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game h2 {
+    color: #ff9800;
+    margin-bottom: 1.25em;
+}
+
+#instructions {
+    background-color: #333333;
+    padding: 0.625em;
+    border-radius: 0.625em;
+    margin-bottom: 1.25em;
+    width: 100%;
+    text-align: center;
+    font-size: 1.125em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.9375em;
+    margin-bottom: 1.25em;
+    width: 100%;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625em;
+}
+
+.control {
+    background-color: #ff9800;
+    border: 2px solid #ffb74d;
+    border-radius: 0.625em;
+    padding: 0.9375em;
+    width: 8.75em;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: #1e1e1e;
+}
+
+.control:hover {
+    transform: scale(1.05);
+}
+
+#status {
+    background-color: #333333;
+    padding: 1.25em;
+    border-radius: 0.625em;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#status p {
+    margin: 0.625em 0;
+    font-size: 1em;
+}
+
+#result {
+    margin-top: 1.25em;
+    font-size: 1.125em;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.image-placeholder {
+    width: 9.375em;
+    height: 9.375em;
+    background-color: #555;
+    border-radius: 0.625em;
+    margin-bottom: 0.625em;
+    background-size: cover;
+    background-position: center;
+}
+
+#status img {
+    width: 6.25em;
+    height: 6.25em;
+    border-radius: 0.625em;
+}
+
+#restartGame {
+    background-color: #ff9800;
+    border: 2px solid #ffb74d;
+    border-radius: 0.625em;
+    padding: 0.9375em;
+    width: 8.75em;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    font-size: 1em;
+    font-weight: bold;
+    color: #1e1e1e;
+    display: none;
+}
+
+#restartGame:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media screen and (max-width: 50em) { /* 800px equivalent */
+    #main-nav ul {
+        display: none;
+        flex-direction: column;
+    }
+    #main-nav ul li {
+        display: block;
+        text-align: center;
+        margin: 0.5em 0;
+    }
+    #hamIcon {
+        display: block;
+    }
+
+    .subpage {
+        padding: 0.625em;
+    }
+
+    #game {
+        width: 100%;
+        padding: 0.625em;
+    }
+
+    #subpage4 .video-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.show-menu {
+    display: flex !important;
+}
+
+/* Popular Restaurants and Stalls page styling */
+/* Page 2 Styling */
+.page#page2 {
+    padding: 1.25em;
+    background-color: #1e1e1e;
+    border-radius: 0.625em;
+    width: calc(100% - 2.5em);
+    max-width: 60em;
+    margin: 1.25em auto;
+}
+
+.page#page2 h2 {
+    color: #ff9800;
+    text-align: center;
+    margin-bottom: 1.25em;
+}
+
+.page#page2 p {
+    text-align: center;
+    margin-bottom: 1.25em;
+}
+
+.section-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section {
+    background-color: #2c2c2c;
+    padding: 1.25em;
+    border-radius: 0.625em;
+    flex: 1;
+    margin: 0.625em;
+    text-align: center;
+}
+
+.section#restaurant1 {
+    background-color: #ff9800;
+}
+
+.section#restaurant2 {
+    background-color: #ff9800;
+}
+
+.section#restaurant3 {
+    background-color: #ff9800;
+}
+
+.section img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.625em;
+    margin-bottom: 1.25em;
+}
+
+.section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.3125em 0.625em;
+    border-radius: 0.3125em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section a:hover {
+    background-color: #ff9800;
+    color: #1e1e1e;
+    text-decoration: underline;
+}
+
+.section strong {
+    color: #ffb74d;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 800px) {
+    .section-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .section {
+        margin: 0.625em 0;
+    }
+}
+
+
+/* Additional styles for subpage4 */
+#subpage4 .video-container {
+    margin: 1.25em 0;
+    max-width: 40em;
+}
+
+#subpage4 .video-container iframe {
+    border-radius: 0.625em;
+    width: 100%;
+    height: 22.5em;
+}
+
+/* Page 3 styling */
+#page3 {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    padding: 1.25em;
+    border-radius: 0.625em;
+    width: calc(100% - 2.5em); /* Subtracting padding from width */
+    max-width: 50em;
+    margin: 1.25em auto;
+}
+
+/* Timeline CSS */
+#history-title {
+    text-align: center;
+    margin: 0.625em auto;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 50em;
+    width: 100%;
+    margin: 1.25em auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1em;
+    margin-top: -1.375em;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25em;
+    border-radius: 0.1875em;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 87, 34, 0.8);
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 0.75em;
+    padding: 0.5em 0.75em;
+    position: absolute;
+    top: 0;
+}
+
+.caption-container {
+    text-align: center;
+    background-color: #333;
+    padding: 0.625em 1em;
+    color: #f4f4f9;
+    margin-top: 0.625em;
+    border-radius: 0.3125em;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.25em;
+}
+
+.column {
+    flex: 1 0 21%;
+    max-width: 21%;
+    margin: 0.3125em;
+    box-sizing: border-box;
+}
+
+.demo-btn {
+    width: 100%;
+    padding: 1.25em 0.625em;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 0.3125em;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.demo-btn:hover, .demo-btn.active {
+    background-color: #e64a19;
+}
+
+.caption-container h3, .caption-container h2 {
+    margin: 0.625em 0;
+    font-size: 1.25em;
+    color: #ff9800;
+}
+
+@media screen and (max-width: 50em) {
+    .column {
+        flex: 1 0 46%;
+        max-width: 46%;
+    }
+
+    .demo-btn {
+        font-size: 0.875em;
+        padding: 1.25em 0.625em;
+    }
+
+    .prev, .next {
+        font-size: 1em;
+        padding: 0.75em;
+    }
+
+    .caption-container {
+        padding: 0.625em 1em;
+    }
+
+    .numbertext {
+        font-size: 0.625em;
+        padding: 0.375em 0.625em;
+    }
+}
