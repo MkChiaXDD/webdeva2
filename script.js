@@ -1,3 +1,4 @@
+// Query selectors to get the buttons and elements
 const page1btn = document.querySelector("#page1btn");
 const page2btn = document.querySelector("#page2btn");
 const page3btn = document.querySelector("#page3btn");
@@ -6,13 +7,17 @@ const allpages = document.querySelectorAll(".page");
 const hamBtn = document.querySelector("#hamIcon");
 const menuItemsList = document.querySelector("nav ul");
 const fireSound = document.getElementById('fireSound');
-fireSound.loop = true; // Set loop attribute
 
+// Enable looping for the fire sound effect
+fireSound.loop = true;
+
+// Function to remove the active class from all buttons
 function removeActiveClass() {
     const allBtns = [page1btn, page2btn, page3btn, page4btn];
     allBtns.forEach(btn => btn.classList.remove("active"));
 }
 
+// Function to show the selected page and hide all others
 function show(pgno) {
     hideall(() => {
         removeActiveClass();
@@ -25,8 +30,10 @@ function show(pgno) {
     });
 }
 
+// Show the first page by default
 show(1);
 
+// Function to hide all pages with a fade-out effect
 function hideall(callback) {
     let counter = allpages.length;
     for (let onepage of allpages) {
@@ -43,15 +50,18 @@ function hideall(callback) {
     }
 }
 
+// Event listeners for page navigation buttons
 page1btn.addEventListener("click", () => show(1));
 page2btn.addEventListener("click", () => show(2));
 page3btn.addEventListener("click", () => show(3));
 page4btn.addEventListener("click", () => show(4));
 
+// Toggle the navigation menu for small screens
 hamBtn.addEventListener("click", () => {
     menuItemsList.classList.toggle("show-menu");
 });
 
+// Show a confirmation message before leaving the page
 document.addEventListener('DOMContentLoaded', () => {
     const showLeavingMessage = (event) => {
         event.preventDefault();
@@ -65,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('restaurant3link').addEventListener('click', showLeavingMessage);
 });
 
+// Subpage navigation setup
 const subpage1btn = document.querySelector("#subpage1btn");
 const subpage2btn = document.querySelector("#subpage2btn");
 const subpage3btn = document.querySelector("#subpage3btn");
@@ -73,8 +84,10 @@ const allsubpages = document.querySelectorAll(".subpage");
 const mainContent = document.querySelector("#main-content");
 const backbtns = document.querySelectorAll(".backbtn");
 
+// Hide all subpages by default
 hideallsub();
 
+// Function to hide all subpages with a fade-out effect
 function hideallsub(callback) {
     let counter = allsubpages.length;
     for (let onesubpage of allsubpages) {
@@ -91,6 +104,7 @@ function hideallsub(callback) {
     }
 }
 
+// Function to show the selected subpage and hide the main content
 function showsub(spgno) {
     hideallsub(() => {
         mainContent.classList.remove("fade-in");
@@ -103,6 +117,7 @@ function showsub(spgno) {
     });
 }
 
+// Function to show the main content and hide all subpages
 function showMainContent() {
     hideallsub(() => {
         mainContent.style.display = "block";
@@ -112,14 +127,16 @@ function showMainContent() {
     });
 }
 
+// Event listeners for subpage navigation buttons
 subpage1btn.addEventListener("click", () => showsub(1));
 subpage2btn.addEventListener("click", () => showsub(2));
 subpage3btn.addEventListener("click", () => showsub(3));
 subpage4btn.addEventListener("click", () => showsub(4));
 
+// Event listeners for back buttons to show the main content
 backbtns.forEach(backbtn => backbtn.addEventListener("click", showMainContent));
 
-/* Game logic */
+/* Game logic for Chicken Rice Cooking Game */
 document.addEventListener('DOMContentLoaded', () => {
     let chickenStatus = 'raw';
     let riceStatus = 'uncooked';
@@ -199,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Function to serve the dish and determine the result
     document.getElementById('serveDish').addEventListener('click', () => {
         if (chickenStatus === 'cooked' && riceStatus === 'cooked') {
             resultElem.textContent = 'You served a delicious Chicken Rice dish!';
@@ -216,8 +234,10 @@ document.addEventListener('DOMContentLoaded', () => {
         restartGameElem.style.display = 'block';
     });
 
+    // Event listener for the restart button to reset the game
     restartGameElem.addEventListener('click', resetGame);
 
+    // Function to update rice cooking status
     function updateRiceStatus() {
         if (riceCookTime < idealRiceCookTime) {
             riceStatusElem.textContent = `Rice: Cooking (${riceCookTime}s) - Undercooked`;
@@ -231,6 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Function to finalize rice cooking status
     function finalizeRiceStatus() {
         if (riceCookTime >= idealRiceCookTime && riceCookTime <= idealRiceCookTime + 5) {
             riceStatus = 'cooked';
@@ -250,6 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Function to update chicken cooking status
     function updateChickenStatus() {
         if (chickenCookTime < idealChickenCookTime) {
             chickenStatusElem.textContent = `Chicken: Cooking (${chickenCookTime}s) - Undercooked`;
@@ -263,6 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Function to finalize chicken cooking status
     function finalizeChickenStatus() {
         if (chickenCookTime >= idealChickenCookTime && chickenCookTime <= idealChickenCookTime + 5) {
             chickenStatus = 'cooked';
@@ -282,6 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Function to show messages
     function showMessage(message) {
         const msgElem = document.createElement('div');
         msgElem.textContent = message;
@@ -301,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
+    // Function to generate a random integer between min and max (inclusive)
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -329,14 +354,17 @@ document.addEventListener('DOMContentLoaded', () => {
 let slideIndex = 1;
 showSlides(slideIndex);
 
+// Function to increment/decrement the slide index and show slides
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
+// Function to set the current slide index and show slides
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
+// Function to show slides based on the current slide index
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
@@ -353,15 +381,13 @@ function showSlides(n) {
     buttons[slideIndex - 1].className += " active";
 }
 
-// Define game area and button elements
+//Trap the chicken game
 const gameArea = document.getElementById('gameArea');
 const restartButton = document.getElementById('restartButton');
-
-// Define grid size and chicken's initial position
 const gridSize = 7;
 let chicken = { x: 3, y: 3 };
 
-// Define possible directions for chicken to move
+//Directions for chicken
 const directions = [
     { dx: 0, dy: -1 }, // Up
     { dx: 0, dy: 1 },  // Down
@@ -371,32 +397,32 @@ const directions = [
 
 // Function to create the grid and initialize the game
 function createGrid() {
-    gameArea.innerHTML = ''; // Clear the game area to reset the grid.
-    for (let y = 0; y < gridSize; y++) { // Loop through each row.
-        for (let x = 0; x < gridSize; x++) { // Loop through each column.
-            const cell = document.createElement('div'); // Create a new div element for each cell.
-            cell.classList.add('cell'); // Add the 'cell' class to the new div.
+    gameArea.innerHTML = ''; // Clear the game area to reset the grid
+    for (let y = 0; y < gridSize; y++) { // Loop through each row
+        for (let x = 0; x < gridSize; x++) { // Loop through each column
+            const cell = document.createElement('div'); // Create a new div element for each cell
+            cell.classList.add('cell'); // Add the 'cell' class to the new div
             if (x === 0 || x === gridSize - 1 || y === 0 || y === gridSize - 1) {
-                cell.classList.add('outer'); // If the cell is on the outer edge, add the 'outer' class.
+                cell.classList.add('outer'); // If the cell is on the outer edge, add the 'outer' class
             }
-            cell.dataset.x = x; // Set the x-coordinate of the cell.
-            cell.dataset.y = y; // Set the y-coordinate of the cell.
-            cell.addEventListener('click', placeBlock); // Add an event listener for placing a block.
-            gameArea.appendChild(cell); // Append the cell to the game area.
+            cell.dataset.x = x; // Set the x-coordinate of the cell
+            cell.dataset.y = y; // Set the y-coordinate of the cell
+            cell.addEventListener('click', placeBlock); // Add an event listener for placing a block
+            gameArea.appendChild(cell); // Append the cell to the game area
         }
     }
-    chicken = { x: 3, y: 3 }; // Initialize the chicken's starting position.
-    updateChickenPosition(); // Update the chicken's position on the grid.
+    chicken = { x: 3, y: 3 }; //Chicken starting position
+    updateChickenPosition(); // Update the chicken's position on the grid
 }
 
 // Function to update the chicken's position on the grid
 function updateChickenPosition() {
-    const cells = document.querySelectorAll('.cell'); // Select all cells in the grid.
-    cells.forEach(cell => { // Loop through each cell.
-        const x = parseInt(cell.dataset.x); // Get the x-coordinate of the cell.
-        const y = parseInt(cell.dataset.y); // Get the y-coordinate of the cell.
+    const cells = document.querySelectorAll('.cell'); // Select all cells in the grid
+    cells.forEach(cell => { // Loop through each cell
+        const x = parseInt(cell.dataset.x); // Get the x-coordinate of the cell
+        const y = parseInt(cell.dataset.y); // Get the y-coordinate of the cell
         cell.innerHTML = ''; // Clear previous content
-        if (x === chicken.x && y === chicken.y) { // If the cell's coordinates match the chicken's position,
+        if (x === chicken.x && y === chicken.y) { // If the cell's coordinates match the chicken's position
             const img = document.createElement('img');
             img.src = 'images/game/chiken.png'; // Local path to the chicken image
             cell.appendChild(img);
@@ -409,55 +435,55 @@ function updateChickenPosition() {
 
 // Function to place a block on the grid
 function placeBlock(event) {
-    const cell = event.currentTarget; // Get the clicked cell.
+    const cell = event.currentTarget; // Get the clicked cell
     if (cell.classList.contains('blocked') || cell.classList.contains('chicken') || cell.classList.contains('outer')) return;
-    // If the cell is already blocked, contains the chicken, or is an outer cell, do nothing.
-    cell.classList.add('blocked'); // Otherwise, add the 'blocked' class to the cell.
+    // If the cell is already blocked, contains the chicken, or is an outer cell, do nothing
+    cell.classList.add('blocked'); // Otherwise, add the 'blocked' class to the cell
     popSound.play();
-    moveChicken(); // Move the chicken.
+    moveChicken(); // Move the chicken
 }
 
 // Function to move the chicken
 function moveChicken() {
     const validMoves = directions
-        .map(dir => ({ x: chicken.x + dir.dx, y: chicken.y + dir.dy })) // Calculate the potential new positions for the chicken based on the possible directions it can move.
-        .filter(pos => isValidMove(pos.x, pos.y)); // Filter out the positions that are not valid moves.
+        .map(dir => ({ x: chicken.x + dir.dx, y: chicken.y + dir.dy })) // Calculate the potential new positions for the chicken based on the possible directions it can move
+        .filter(pos => isValidMove(pos.x, pos.y)); // Filter out the positions that are not valid moves
     
-    if (validMoves.length > 0) { // If there are any valid moves available,
-        const move = validMoves[Math.floor(Math.random() * validMoves.length)]; // Select a random valid move.
-        chicken.x = move.x; // Update the chicken's x-coordinate.
-        chicken.y = move.y; // Update the chicken's y-coordinate.
-        updateChickenPosition(); // Update the chicken's position on the grid.
-        if (isEscaped(chicken.x, chicken.y)) { // Check if the chicken has escaped.
-            showAlert('The chicken has escaped! You lose!'); // If the chicken escaped, show a losing alert.
+    if (validMoves.length > 0) { // If there are any valid moves available
+        const move = validMoves[Math.floor(Math.random() * validMoves.length)]; // Select a random valid move
+        chicken.x = move.x; // Update the chicken's x-coordinate
+        chicken.y = move.y; // Update the chicken's y-coordinate
+        updateChickenPosition(); // Update the chicken's position on the grid
+        if (isEscaped(chicken.x, chicken.y)) { // Check if the chicken has escaped
+            showAlert('The chicken has escaped! You lose!'); // If the chicken escaped, show a losing alert
         }
     } else {
-        showAlert('The chicken is trapped! You win!'); // If there are no valid moves, the chicken is trapped and you win.
+        showAlert('The chicken is trapped! You win!'); // If there are no valid moves, the chicken is trapped and you win
     }
 }
 
 // Function to check if a move is valid
 function isValidMove(x, y) {
-    if (x < 0 || x >= gridSize || y < 0 || y >= gridSize) return false; // Check if the position is within the grid boundaries.
-    const cell = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`); // Select the cell at the given position.
-    return !cell.classList.contains('blocked'); // Return true if the cell is not blocked, false otherwise.
+    if (x < 0 || x >= gridSize || y < 0 || y >= gridSize) return false; // Check if the position is within the grid boundaries
+    const cell = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`); // Select the cell at the given position
+    return !cell.classList.contains('blocked'); // Return true if the cell is not blocked, false otherwise
 }
 
 // Function to check if the chicken has escaped
 function isEscaped(x, y) {
-    return x === 0 || x === gridSize - 1 || y === 0 || y === gridSize - 1; // Check if the position is on the outer edge of the grid.
+    return x === 0 || x === gridSize - 1 || y === 0 || y === gridSize - 1; // Check if the position is on the outer edge of the grid
 }
 
 // Function to show an alert and display the restart button
 function showAlert(message) {
-    alert(message); // Show an alert with the given message.
-    restartButton.style.display = 'block'; // Display the restart button.
+    alert(message); // Show an alert with the given message
+    restartButton.style.display = 'block'; // Display the restart button
 }
 
 // Function to restart the game
 function restartGame() {
-    restartButton.style.display = 'none'; // Hide the restart button.
-    createGrid(); // Recreate the grid to start a new game.
+    restartButton.style.display = 'none'; // Hide the restart button
+    createGrid(); // Recreate the grid to start a new game
 }
 
 // Initialize the grid when the page loads

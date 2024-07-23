@@ -1,10 +1,10 @@
 /* Global Styles */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
 }
 
 body, html {
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 body {
@@ -15,7 +15,7 @@ body {
     color: #e0e0e0;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 16px; /* Base font size */
 }
 
 /* Header Styles */
@@ -125,7 +125,7 @@ header h1 {
     opacity: 0;
 }
 
-/* Footer styling */
+/* Footer Styling */
 footer {
     background-color: #1f1f1f;
     color: #ff9800;
@@ -137,8 +137,8 @@ footer {
 
 .qr-code {
     display: none; /* Hide by default */
-    margin-top: 10px; /* Optional: Adjust margin as needed */
-    width: 150px; /* Increase the size of the QR code */
+    margin-top: 10px;
+    width: 150px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -306,6 +306,7 @@ footer {
     }
 }
 
+/* Video Container Styles */
 #subpage4 .video-container {
     margin: 1.25em 0;
     max-width: 600px; /* Increase the size of the video container */
