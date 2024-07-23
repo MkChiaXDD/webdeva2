@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    document.getElementById('restaurant1').addEventListener('click', showLeavingMessage);
-    document.getElementById('restaurant2').addEventListener('click', showLeavingMessage);
-    document.getElementById('restaurant3').addEventListener('click', showLeavingMessage);
+    document.getElementById('restaurant1link').addEventListener('click', showLeavingMessage);
+    document.getElementById('restaurant2link').addEventListener('click', showLeavingMessage);
+    document.getElementById('restaurant3link').addEventListener('click', showLeavingMessage);
 });
 
 const subpage1btn = document.querySelector("#subpage1btn");
@@ -352,3 +352,112 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     buttons[slideIndex - 1].className += " active";
 }
+
+// Define game area and button elements
+const gameArea = document.getElementById('gameArea');
+const restartButton = document.getElementById('restartButton');
+
+// Define grid size and chicken's initial position
+const gridSize = 7;
+let chicken = { x: 3, y: 3 };
+
+// Define possible directions for chicken to move
+const directions = [
+    { dx: 0, dy: -1 }, // Up
+    { dx: 0, dy: 1 },  // Down
+    { dx: -1, dy: 0 }, // Left
+    { dx: 1, dy: 0 },  // Right
+];
+
+// Function to create the grid and initialize the game
+function createGrid() {
+    gameArea.innerHTML = ''; // Clear the game area to reset the grid.
+    for (let y = 0; y < gridSize; y++) { // Loop through each row.
+        for (let x = 0; x < gridSize; x++) { // Loop through each column.
+            const cell = document.createElement('div'); // Create a new div element for each cell.
+            cell.classList.add('cell'); // Add the 'cell' class to the new div.
+            if (x === 0 || x === gridSize - 1 || y === 0 || y === gridSize - 1) {
+                cell.classList.add('outer'); // If the cell is on the outer edge, add the 'outer' class.
+            }
+            cell.dataset.x = x; // Set the x-coordinate of the cell.
+            cell.dataset.y = y; // Set the y-coordinate of the cell.
+            cell.addEventListener('click', placeBlock); // Add an event listener for placing a block.
+            gameArea.appendChild(cell); // Append the cell to the game area.
+        }
+    }
+    chicken = { x: 3, y: 3 }; // Initialize the chicken's starting position.
+    updateChickenPosition(); // Update the chicken's position on the grid.
+}
+
+// Function to update the chicken's position on the grid
+function updateChickenPosition() {
+    const cells = document.querySelectorAll('.cell'); // Select all cells in the grid.
+    cells.forEach(cell => { // Loop through each cell.
+        const x = parseInt(cell.dataset.x); // Get the x-coordinate of the cell.
+        const y = parseInt(cell.dataset.y); // Get the y-coordinate of the cell.
+        cell.innerHTML = ''; // Clear previous content
+        if (x === chicken.x && y === chicken.y) { // If the cell's coordinates match the chicken's position,
+            const img = document.createElement('img');
+            img.src = 'images/chiken.png'; // Local path to the chicken image
+            cell.appendChild(img);
+            cell.classList.add('chicken');
+        } else {
+            cell.classList.remove('chicken');
+        }
+    });
+}
+
+// Function to place a block on the grid
+function placeBlock(event) {
+    const cell = event.currentTarget; // Get the clicked cell.
+    if (cell.classList.contains('blocked') || cell.classList.contains('chicken') || cell.classList.contains('outer')) return;
+    // If the cell is already blocked, contains the chicken, or is an outer cell, do nothing.
+    cell.classList.add('blocked'); // Otherwise, add the 'blocked' class to the cell.
+    moveChicken(); // Move the chicken.
+}
+
+// Function to move the chicken
+function moveChicken() {
+    const validMoves = directions
+        .map(dir => ({ x: chicken.x + dir.dx, y: chicken.y + dir.dy })) // Calculate the potential new positions for the chicken based on the possible directions it can move.
+        .filter(pos => isValidMove(pos.x, pos.y)); // Filter out the positions that are not valid moves.
+    
+    if (validMoves.length > 0) { // If there are any valid moves available,
+        const move = validMoves[Math.floor(Math.random() * validMoves.length)]; // Select a random valid move.
+        chicken.x = move.x; // Update the chicken's x-coordinate.
+        chicken.y = move.y; // Update the chicken's y-coordinate.
+        updateChickenPosition(); // Update the chicken's position on the grid.
+        if (isEscaped(chicken.x, chicken.y)) { // Check if the chicken has escaped.
+            showAlert('The chicken has escaped! You lose!'); // If the chicken escaped, show a losing alert.
+        }
+    } else {
+        showAlert('The chicken is trapped! You win!'); // If there are no valid moves, the chicken is trapped and you win.
+    }
+}
+
+// Function to check if a move is valid
+function isValidMove(x, y) {
+    if (x < 0 || x >= gridSize || y < 0 || y >= gridSize) return false; // Check if the position is within the grid boundaries.
+    const cell = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`); // Select the cell at the given position.
+    return !cell.classList.contains('blocked'); // Return true if the cell is not blocked, false otherwise.
+}
+
+// Function to check if the chicken has escaped
+function isEscaped(x, y) {
+    return x === 0 || x === gridSize - 1 || y === 0 || y === gridSize - 1; // Check if the position is on the outer edge of the grid.
+}
+
+// Function to show an alert and display the restart button
+function showAlert(message) {
+    alert(message); // Show an alert with the given message.
+    restartButton.style.display = 'block'; // Display the restart button.
+}
+
+// Function to restart the game
+function restartGame() {
+    restartButton.style.display = 'none'; // Hide the restart button.
+    createGrid(); // Recreate the grid to start a new game.
+}
+
+// Initialize the grid when the page loads
+createGrid();

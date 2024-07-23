@@ -1,4 +1,4 @@
-/* Apply box-sizing globally to include padding and border in element's total width and height */
+/* Global Styles */
 * {
     box-sizing: border-box;
 }
@@ -15,12 +15,10 @@ body {
     color: #e0e0e0;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    font-size: 16px; /* Base font size for scaling */
+    font-size: 16px;
 }
 
-/* Header styling */
+/* Header Styles */
 header {
     background-color: #1f1f1f;
     color: #ff9800;
@@ -33,38 +31,13 @@ header h1 {
     margin: 0;
 }
 
-/* Responsive Header Padding */
-@media screen and (max-width: 50em) { /* 800px equivalent */
+@media screen and (max-width: 50em) {
     header {
         padding: 0.5em;
     }
 }
 
-/* Fade-in and Fade-out animations */
-.page {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.subpage {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.fade-in2 {
-    opacity: 1;
-}
-
-
-.fade-in {
-    opacity: 1;
-}
-
-.fade-out {
-    opacity: 0;
-}
-
-/* Navigation styling */
+/* Navigation Styles */
 #main-nav {
     position: relative;
     background-color: #333;
@@ -102,7 +75,6 @@ header h1 {
     border-radius: 0.625em;
 }
 
-/* Style for the active page button */
 #main-nav ul li button.active {
     color: #ff9800;
 }
@@ -111,7 +83,6 @@ header h1 {
     color: #ff9800;
 }
 
-/* Hamburger menu icon */
 #hamIcon {
     display: none;
     background: none;
@@ -121,21 +92,38 @@ header h1 {
     cursor: pointer;
 }
 
-/* Simplified responsive video container */
-.video-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+@media screen and (max-width: 50em) {
+    #main-nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    #main-nav ul li {
+        display: block;
+        text-align: center;
+        margin: 0.5em 0;
+    }
+
+    #hamIcon {
+        display: block;
+    }
 }
 
-.video-container iframe {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    border: 0;
+/* Animation Styles */
+.page, .subpage {
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-/* Footer styling */
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+/* Footer Styles */
 footer {
     background-color: #1f1f1f;
     color: #ff9800;
@@ -144,13 +132,12 @@ footer {
     width: 100%;
 }
 
-/* Main content styling */
+/* Content Styles */
 #main-content {
-    display: block;
     background-color: #1e1e1e;
     padding: 1.25em;
     border-radius: 0.625em;
-    width: calc(100% - 2em); /* Subtracting padding from width */
+    width: calc(100% - 2em);
     max-width: 50em;
     margin: 1.25em auto;
     text-align: center;
@@ -160,7 +147,7 @@ footer {
     color: #ff9800;
 }
 
-/* Sub-navigation styling */
+/* Sub-navigation Styles */
 #subnav {
     margin-top: 1.25em;
     text-align: center;
@@ -181,22 +168,22 @@ footer {
     background-color: #777;
 }
 
-/* Subpages styling */
+/* Subpage Styles */
 .subpage {
     display: none;
     background-color: #1e1e1e;
     padding: 1.25em;
     border-radius: 0.625em;
-    width: calc(100% - 2.5em); /* Subtracting padding from width */
+    width: calc(100% - 2.5em);
     max-width: 50em;
     margin: 1.25em auto;
 }
 
-.subpage h3 {
+.subpage h3, #trap-the-chicken h2, #game h2 {
     color: #ff9800;
 }
 
-.subpage img {
+.subpage img, .section img {
     max-width: 100%;
     height: auto;
     border-radius: 0.625em;
@@ -209,7 +196,6 @@ footer {
     padding: 0 1.25em;
 }
 
-/* Back button styling */
 .backbtn {
     background-color: #ff9800;
     color: #1e1e1e;
@@ -225,169 +211,12 @@ footer {
     background-color: #ffb74d;
 }
 
-/* Game page styling */
-#game {
-    margin: 1.25em auto;
-    padding: 1.25em;
-    background-color: #1e1e1e;
-    width: 90%;
-    max-width: 50em;
-    border-radius: 0.625em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#game h2 {
-    color: #ff9800;
-    margin-bottom: 1.25em;
-}
-
-#instructions {
-    background-color: #333333;
-    padding: 0.625em;
-    border-radius: 0.625em;
-    margin-bottom: 1.25em;
-    width: 100%;
-    text-align: center;
-    font-size: 1.125em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#controls {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.9375em;
-    margin-bottom: 1.25em;
-    width: 100%;
-}
-
-.control-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.625em;
-}
-
-.control {
-    background-color: #ff9800;
-    border: 2px solid #ffb74d;
-    border-radius: 0.625em;
-    padding: 0.9375em;
-    width: 8.75em;
-    cursor: pointer;
-    transition: transform 0.2s;
-    text-align: center;
-    font-size: 1em;
-    font-weight: bold;
-    color: #1e1e1e;
-}
-
-.control:hover {
-    transform: scale(1.05);
-}
-
-#status {
-    background-color: #333333;
-    padding: 1.25em;
-    border-radius: 0.625em;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#status p {
-    margin: 0.625em 0;
-    font-size: 1em;
-}
-
-#result {
-    margin-top: 1.25em;
-    font-size: 1.125em;
-    font-weight: bold;
-    color: #4caf50;
-}
-
-.image-placeholder {
-    width: 9.375em;
-    height: 9.375em;
-    background-color: #555;
-    border-radius: 0.625em;
-    margin-bottom: 0.625em;
-    background-size: cover;
-    background-position: center;
-}
-
-#status img {
-    width: 6.25em;
-    height: 6.25em;
-    border-radius: 0.625em;
-}
-
-#restartGame {
-    background-color: #ff9800;
-    border: 2px solid #ffb74d;
-    border-radius: 0.625em;
-    padding: 0.9375em;
-    width: 8.75em;
-    cursor: pointer;
-    transition: transform 0.2s;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-    font-size: 1em;
-    font-weight: bold;
-    color: #1e1e1e;
-    display: none;
-}
-
-#restartGame:hover {
-    transform: scale(1.05);
-}
-
-/* Responsive design */
-@media screen and (max-width: 50em) { /* 800px equivalent */
-    #main-nav ul {
-        display: none;
-        flex-direction: column;
-    }
-    #main-nav ul li {
-        display: block;
-        text-align: center;
-        margin: 0.5em 0;
-    }
-    #hamIcon {
-        display: block;
-    }
-
-    .subpage {
-        padding: 0.625em;
-    }
-
-    #game {
-        width: 100%;
-        padding: 0.625em;
-    }
-
-    #subpage4 .video-container {
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
 .show-menu {
     display: flex !important;
 }
 
-/* Popular Restaurants and Stalls page styling */
-/* Page 2 Styling */
-.page#page2 {
+/* Popular Restaurants and Stalls Page Styles */
+.page#page2, .page#page3 {
     padding: 1.25em;
     background-color: #1e1e1e;
     border-radius: 0.625em;
@@ -396,7 +225,7 @@ footer {
     margin: 1.25em auto;
 }
 
-.page#page2 h2 {
+.page#page2 h2, .page#page3 h2 {
     color: #ff9800;
     text-align: center;
     margin-bottom: 1.25em;
@@ -421,18 +250,6 @@ footer {
     text-align: center;
 }
 
-.section#restaurant1 {
-    background-color: #ff9800;
-}
-
-.section#restaurant2 {
-    background-color: #ff9800;
-}
-
-.section#restaurant3 {
-    background-color: #ff9800;
-}
-
 .section img {
     width: 100%;
     height: auto;
@@ -450,8 +267,8 @@ footer {
 }
 
 .section a:hover {
-    background-color: #ff9800;
-    color: #1e1e1e;
+    background-color: #0000FF;
+    color: #FFFFFF;
     text-decoration: underline;
 }
 
@@ -459,19 +276,17 @@ footer {
     color: #ffb74d;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 800px) {
     .section-container {
         flex-direction: column;
         align-items: stretch;
     }
+
     .section {
         margin: 0.625em 0;
     }
 }
 
-
-/* Additional styles for subpage4 */
 #subpage4 .video-container {
     margin: 1.25em 0;
     max-width: 40em;
@@ -483,18 +298,6 @@ footer {
     height: 22.5em;
 }
 
-/* Page 3 styling */
-#page3 {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    padding: 1.25em;
-    border-radius: 0.625em;
-    width: calc(100% - 2.5em); /* Subtracting padding from width */
-    max-width: 50em;
-    margin: 1.25em auto;
-}
-
-/* Timeline CSS */
 #history-title {
     text-align: center;
     margin: 0.625em auto;
@@ -613,3 +416,218 @@ footer {
         padding: 0.375em 0.625em;
     }
 }
+
+/* Game Page Styles */
+#game {
+    margin: 1.25em;
+    padding: 1.25em;
+    background-color: #1e1e1e;
+    width: 90%;
+    max-width: 50em;
+    border-radius: 0.625em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#instructions {
+    background-color: #333333;
+    padding: 0.625em;
+    border-radius: 0.625em;
+    margin-bottom: 1.25em;
+    width: 100%;
+    text-align: center;
+    font-size: 1.125em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.9375em;
+    margin-bottom: 1.25em;
+    width: 100%;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625em;
+}
+
+.control {
+    background-color: #ff9800;
+    border: 2px solid #ffb74d;
+    border-radius: 0.625em;
+    padding: 0.9375em;
+    width: 8.75em;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: #1e1e1e;
+}
+
+.control:hover {
+    transform: scale(1.05);
+}
+
+#status {
+    background-color: #333333;
+    padding: 1.25em;
+    border-radius: 0.625em;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#status p {
+    margin: 0.625em 0;
+    font-size: 1em;
+}
+
+#result {
+    margin-top: 1.25em;
+    font-size: 1.125em;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.image-placeholder {
+    width: 9.375em;
+    height: 9.375em;
+    background-color: #555;
+    border-radius: 0.625em;
+    margin-bottom: 0.625em;
+    background-size: cover;
+    background-position: center;
+}
+
+#status img {
+    width: 6.25em;
+    height: 6.25em;
+    border-radius: 0.625em;
+}
+
+#restartGame {
+    background-color: #ff9800;
+    border: 2px solid #ffb74d;
+    border-radius: 0.625em;
+    padding: 0.9375em;
+    width: 8.75em;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    font-size: 1em;
+    font-weight: bold;
+    color: #1e1e1e;
+    display: none;
+}
+
+#restartGame:hover {
+    transform: scale(1.05);
+}
+
+/* Container for both games */
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.625em;
+}
+
+/* Trap the Chicken game styling */
+#trap-the-chicken {
+    margin: 1.25em;
+    padding: 1.25em;
+    background-color: #1e1e1e;
+    width: 90%;
+    max-width: 50em;
+    border-radius: 0.625em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gameArea {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 2px;
+    width: 100%;
+    max-width: 350px;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 0.625em;
+    aspect-ratio: 1;
+}
+
+.cell {
+    background-color: #333;
+    border: 1px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.outer {
+    background-color: #ffcccc;
+}
+
+.blocked {
+    background-color: #000;
+    cursor: not-allowed;
+}
+
+.chicken img {
+    width: 100%;
+    height: 100%;
+}
+
+#restartButton {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ff9800;
+    color: #1e1e1e;
+    border: 2px solid #ffb74d;
+    border-radius: 0.625em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#restartButton:hover {
+    background-color: #ffb74d;
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media screen and (max-width: 800px) {
+    .game-container {
+        flex-direction: column;
+    }
+
+    #game, #trap-the-chicken {
+        width: 100%;
+    }
+
+    #subpage4 .video-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
