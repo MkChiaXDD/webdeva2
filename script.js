@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             riceStatus = 'cooking';
             riceCookTime = 0;
             riceStatusElem.textContent = `Rice: Cooking (0s) - Undercooked`;
-            imageRiceStatusElem.src = "images/cooking_rice.jpg";
+            imageRiceStatusElem.src = "images/game/cooking_rice.jpg";
             showMessage('You started cooking the rice!');
             fireSound.play();
             riceTimer = setInterval(() => {
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             chickenStatus = 'cooking';
             chickenCookTime = 0;
             chickenStatusElem.textContent = `Chicken: Cooking (0s) - Undercooked`;
-            imageChickenStatusElem.src = "images/cooking_chicken.jpg";
+            imageChickenStatusElem.src = "images/game/cooking_chicken.jpg";
             showMessage('You started cooking the chicken!');
             fireSound.play();
             chickenTimer = setInterval(() => {
@@ -221,13 +221,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateRiceStatus() {
         if (riceCookTime < idealRiceCookTime) {
             riceStatusElem.textContent = `Rice: Cooking (${riceCookTime}s) - Undercooked`;
-            imageRiceStatusElem.src = "images/undercooked_rice.jpg";
+            imageRiceStatusElem.src = "images/game/undercooked_rice.jpg";
         } else if (riceCookTime >= idealRiceCookTime && riceCookTime <= idealRiceCookTime + 5) {
             riceStatusElem.textContent = `Rice: Cooking (${riceCookTime}s) - Cooked`;
-            imageRiceStatusElem.src = "images/cooked_rice.jpg";
+            imageRiceStatusElem.src = "images/game/cooked_rice.jpg";
         } else {
             riceStatusElem.textContent = `Rice: Cooking (${riceCookTime}s) - Overcooked`;
-            imageRiceStatusElem.src = "images/overcooked_rice.jpg";
+            imageRiceStatusElem.src = "images/game/overcooked_rice.jpg";
         }
     }
 
@@ -235,17 +235,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (riceCookTime >= idealRiceCookTime && riceCookTime <= idealRiceCookTime + 5) {
             riceStatus = 'cooked';
             riceStatusElem.textContent = `Rice: Cooked`;
-            imageRiceStatusElem.src = "images/cooked_rice.jpg";
+            imageRiceStatusElem.src = "images/game/cooked_rice.jpg";
             showMessage('Rice is cooked!');
         } else if (riceCookTime > idealRiceCookTime + 5) {
             riceStatus = 'overcooked';
             riceStatusElem.textContent = `Rice: Overcooked`;
-            imageRiceStatusElem.src = "images/overcooked_rice.jpg";
+            imageRiceStatusElem.src = "images/game/overcooked_rice.jpg";
             showMessage('Rice is overcooked!');
         } else {
             riceStatus = 'undercooked';
             riceStatusElem.textContent = `Rice: Undercooked`;
-            imageRiceStatusElem.src = "images/undercooked_rice.jpg";
+            imageRiceStatusElem.src = "images/game/undercooked_rice.jpg";
             showMessage('Rice is undercooked!');
         }
     }
@@ -253,13 +253,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateChickenStatus() {
         if (chickenCookTime < idealChickenCookTime) {
             chickenStatusElem.textContent = `Chicken: Cooking (${chickenCookTime}s) - Undercooked`;
-            imageChickenStatusElem.src = "images/undercooked_chicken.jpg";
+            imageChickenStatusElem.src = "images/game/undercooked_chicken.jpg";
         } else if (chickenCookTime >= idealChickenCookTime && chickenCookTime <= idealChickenCookTime + 5) {
             chickenStatusElem.textContent = `Chicken: Cooking (${chickenCookTime}s) - Cooked`;
-            imageChickenStatusElem.src = "images/cooked_chicken.jpg";
+            imageChickenStatusElem.src = "images/game/cooked_chicken.jpg";
         } else {
             chickenStatusElem.textContent = `Chicken: Cooking (${chickenCookTime}s) - Overcooked`;
-            imageChickenStatusElem.src = "images/overcooked_chicken.jpg";
+            imageChickenStatusElem.src = "images/game/overcooked_chicken.jpg";
         }
     }
 
@@ -267,17 +267,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (chickenCookTime >= idealChickenCookTime && chickenCookTime <= idealChickenCookTime + 5) {
             chickenStatus = 'cooked';
             chickenStatusElem.textContent = `Chicken: Cooked`;
-            imageChickenStatusElem.src = "images/cooked_chicken.jpg";
+            imageChickenStatusElem.src = "images/game/cooked_chicken.jpg";
             showMessage('Chicken is cooked!');
         } else if (chickenCookTime > idealChickenCookTime + 5) {
             chickenStatus = 'overcooked';
             chickenStatusElem.textContent = `Chicken: Overcooked`;
-            imageChickenStatusElem.src = "images/overcooked_chicken.jpg";
+            imageChickenStatusElem.src = "images/game/overcooked_chicken.jpg";
             showMessage('Chicken is overcooked!');
         } else {
             chickenStatus = 'undercooked';
             chickenStatusElem.textContent = `Chicken: Undercooked`;
-            imageChickenStatusElem.src = "images/undercooked_chicken.jpg";
+            imageChickenStatusElem.src = "images/game/undercooked_chicken.jpg";
             showMessage('Chicken is undercooked!');
         }
     }
@@ -317,8 +317,8 @@ document.addEventListener('DOMContentLoaded', () => {
         chickenStatusElem.textContent = 'Chicken: Raw';
         riceStatusElem.textContent = 'Rice: Uncooked';
         resultElem.textContent = '';
-        imageChickenStatusElem.src = 'images/raw_chicken.jpg';
-        imageRiceStatusElem.src = 'images/uncooked_rice.jpg';
+        imageChickenStatusElem.src = 'images/game/raw_chicken.jpg';
+        imageRiceStatusElem.src = 'images/game/uncooked_rice.jpg';
         restartGameElem.style.display = 'none';
         fireSound.pause();
         fireSound.currentTime = 0;
@@ -398,7 +398,7 @@ function updateChickenPosition() {
         cell.innerHTML = ''; // Clear previous content
         if (x === chicken.x && y === chicken.y) { // If the cell's coordinates match the chicken's position,
             const img = document.createElement('img');
-            img.src = 'images/chiken.png'; // Local path to the chicken image
+            img.src = 'images/game/chiken.png'; // Local path to the chicken image
             cell.appendChild(img);
             cell.classList.add('chicken');
         } else {
@@ -413,6 +413,7 @@ function placeBlock(event) {
     if (cell.classList.contains('blocked') || cell.classList.contains('chicken') || cell.classList.contains('outer')) return;
     // If the cell is already blocked, contains the chicken, or is an outer cell, do nothing.
     cell.classList.add('blocked'); // Otherwise, add the 'blocked' class to the cell.
+    popSound.play();
     moveChicken(); // Move the chicken.
 }
 

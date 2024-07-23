@@ -31,6 +31,7 @@ header h1 {
     margin: 0;
 }
 
+/* Responsive Header Padding */
 @media screen and (max-width: 50em) {
     header {
         padding: 0.5em;
@@ -92,6 +93,7 @@ header h1 {
     cursor: pointer;
 }
 
+/* Responsive Navigation Menu */
 @media screen and (max-width: 50em) {
     #main-nav ul {
         display: none;
@@ -123,13 +125,28 @@ header h1 {
     opacity: 0;
 }
 
-/* Footer Styles */
+/* Footer styling */
 footer {
     background-color: #1f1f1f;
     color: #ff9800;
     text-align: center;
     padding: 0.625em 0;
     width: 100%;
+    position: relative;
+}
+
+.qr-code {
+    display: none; /* Hide by default */
+    margin-top: 10px; /* Optional: Adjust margin as needed */
+    width: 150px; /* Increase the size of the QR code */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 800px) {
+    .qr-code {
+        display: block; /* Show when screen width is above 800px */
+    }
 }
 
 /* Content Styles */
@@ -211,6 +228,7 @@ footer {
     background-color: #ffb74d;
 }
 
+/* Show Menu on Small Screens */
 .show-menu {
     display: flex !important;
 }
@@ -276,6 +294,7 @@ footer {
     color: #ffb74d;
 }
 
+/* Responsive Section Container */
 @media screen and (max-width: 800px) {
     .section-container {
         flex-direction: column;
@@ -289,15 +308,27 @@ footer {
 
 #subpage4 .video-container {
     margin: 1.25em 0;
-    max-width: 40em;
+    max-width: 600px; /* Increase the size of the video container */
+    width: 100%;
+    padding: 1em; /* Add padding for spacing */
 }
 
 #subpage4 .video-container iframe {
-    border-radius: 0.625em;
     width: 100%;
-    height: 22.5em;
+    height: 400px;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 0.625em; /* Add border-radius if you want rounded corners */
 }
 
+/* Responsive design for smaller screens */
+@media screen and (max-width: 50em) {
+    #subpage4 .video-container iframe {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+}
+
+/* Timeline Styles */
 #history-title {
     text-align: center;
     margin: 0.625em auto;
@@ -391,6 +422,7 @@ footer {
     color: #ff9800;
 }
 
+/* Responsive Columns */
 @media screen and (max-width: 50em) {
     .column {
         flex: 1 0 46%;
@@ -527,7 +559,6 @@ footer {
     cursor: pointer;
     transition: transform 0.2s;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
     font-size: 1em;
     font-weight: bold;
     color: #1e1e1e;
@@ -538,7 +569,7 @@ footer {
     transform: scale(1.05);
 }
 
-/* Container for both games */
+/* Container for Both Games */
 .game-container {
     display: flex;
     flex-wrap: wrap;
@@ -546,7 +577,7 @@ footer {
     gap: 1.25em;
 }
 
-/* Trap the Chicken game styling */
+/* Trap the Chicken Game Styling */
 #trap-the-chicken {
     margin: 1.25em;
     padding: 1.25em;
@@ -615,19 +646,13 @@ footer {
     transform: scale(1.05);
 }
 
-/* Responsive design */
+/* Responsive Design */
 @media screen and (max-width: 800px) {
     .game-container {
-        flex-direction: row;
+        flex-direction: column;
     }
 
     #game, #trap-the-chicken {
         width: 100%;
-    }dddddddd
-
-    #subpage4 .video-container {
-        width: 100%;
-        max-width: 100%;
     }
 }
-

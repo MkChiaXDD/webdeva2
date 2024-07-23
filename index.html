@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chicken Rice</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Audio elements for game sounds -->
     <audio id="winSound" src="audio/win.mp3"></audio>
     <audio id="loseSound" src="audio/lose.mp3"></audio>
     <audio id="wrongSound" src="audio/wrong.mp3"></audio>
     <audio id="fireSound" src="audio/fire.mp3"></audio>
+    <audio id="popSound" src="audio/pop.mp3"></audio>
+    
     <!-- Main Topic -->
     <header>
-        <h1>Chicken Rice</h1> <!-- Main heading of the page -->
+        <h1>Chicken Rice</h1>
     </header>
     
-     <!-- Navigation Menu -->
+    <!-- Navigation Menu -->
     <nav id="main-nav" class="fade-in">
-        <button id="hamIcon">&#9776; Menu</button>
+        <button id="hamIcon">&#9776; Menu</button> <!-- Hamburger menu icon for mobile view -->
         <ul>
             <li><button id="page1btn">Ingredients and Recipe</button></li>
             <li><button id="page2btn">Popular Restaurants and Stalls</button></li>
@@ -27,10 +30,10 @@
         </ul>
     </nav>
 
-
-    <!-- Page Content -->
+    <!-- Page Content Container -->
     <div id="pagecontainer">
-        <div class="page" id="page1"> <!-- Ingredients and Recipe page -->
+        <!-- Ingredients and Recipe page -->
+        <div class="page" id="page1">
             <section id="main-content">
                 <h2>Ingredients and Recipe</h2>
                 <p>Select a type of chicken to view the recipe.</p>
@@ -42,14 +45,15 @@
                 </div>
             </section>
 
+            <!-- Steamed Chicken Recipe Section -->
             <section class="subpage" id="subpage1">
                 <button class="backbtn">Back to Ingredients and Recipe</button>
                 <h3>Steamed Chicken</h3>
                 <p>Chicken Rice is a popular dish that is simple yet delicious. Below are the ingredients and recipe to make this dish.</p>
-                <img src="images/steamedchicken.jpg" alt="Chicken Rice"> <!-- Image of Chicken Rice -->
+                <img src="images/page1/steamedchicken.jpg" alt="Chicken Rice"> <!-- Image of Chicken Rice -->
                 <h3>Ingredients for Steamed Chicken:</h3>
                 <ul>
-                    <!-- List of ingredients for Chicken -->
+                    <!-- List of ingredients for Steamed Chicken -->
                     <li>1 whole chicken (about 3-4 lbs)</li>
                     <li>1 tablespoon kosher salt</li>
                     <li>4-5 slices of ginger</li>
@@ -79,11 +83,12 @@
                 </ol>
             </section>
 
+            <!-- Roasted Chicken Recipe Section -->
             <section class="subpage" id="subpage2">
                 <button class="backbtn">Back to Ingredients and Recipe</button>
                 <h3>Roasted Chicken</h3>
                 <p>Details about roasted chicken...</p>
-                <img src="images/roastedchicken.jpg" alt="Chicken Rice"> <!-- Image of Chicken Rice -->
+                <img src="images/page1/roastedchicken.jpg" alt="Chicken Rice"> <!-- Image of Chicken Rice -->
                 <h3>Ingredients for Roasted Chicken:</h3>
                 <ul>
                     <!-- List of ingredients for Roasted Chicken -->
@@ -114,25 +119,21 @@
                 <h3>Recipe:</h3>
                 <ol>
                     <!-- Step-by-step recipe instructions -->
-                    <li>
-                        Trim off any excess fat and skin from the chicken and keep it aside (this will be used for the rice in Step 2). The next thing to do is to “exfoliate“! Exfoliating the chicken helps remove any trapped dirt or yucky stuff off the skin. Grab a handful of coarse or kosher salt and start rubbing all over the skin but at the same time being careful not to tear or damage the skin. You should see a smooth clean skin once completed. The next step is to give your chicken a workout! There is a theory that when most chickens are “killed“, their muscles tend to tense up and constrict. By giving the legs and wings gentle pulls and stretches, it should ease the muscle tension and thus give you a more juicy and tender soft flesh at the end.
-                    </li>
-                    <li>
-                        Combine the Honey, Maltose, Molasses, Five spice powder, White pepper, Ginger juice, and Light soy sauce in a bowl. Stir to mix the marinade and generously rub all over the chicken including the cavity. Stuff the Spring onions and Ginger slices into the cavity. Tie the two legs together with kitchen twine to help cover the cavity. Leave the marinated chicken to air dry in the refrigerator for at least 6-8 hours or overnight.
-                    </li>
-                    <li>
-                        Take the chicken out 30-45 mins before roasting to allow it to reach room temperature. Preheat oven to 220 degrees Celsius. When the oven is hot enough, turn it down to 200 degrees Celsius and place the roasting pan with chicken into the oven for 20 minutes. After 20 minutes, reduce the heat to 180 degrees Celsius and roast for a further 30-45 minutes (depending on the size of the chicken) until the skin is crisp and dark brown in color. Once done, take the chicken out to rest before cutting it into pieces.
-                    </li>
+                    <li>Trim off any excess fat and skin from the chicken and keep it aside (this will be used for the rice in Step 2). The next thing to do is to “exfoliate“! Exfoliating the chicken helps remove any trapped dirt or yucky stuff off the skin. Grab a handful of coarse or kosher salt and start rubbing all over the skin but at the same time being careful not to tear or damage the skin. You should see a smooth clean skin once completed. The next step is to give your chicken a workout! There is a theory that when most chickens are “killed“, their muscles tend to tense up and constrict. By giving the legs and wings gentle pulls and stretches, it should ease the muscle tension and thus give you a more juicy and tender soft flesh at the end.</li>
+                    <li>Combine the Honey, Maltose, Molasses, Five spice powder, White pepper, Ginger juice, and Light soy sauce in a bowl. Stir to mix the marinade and generously rub all over the chicken including the cavity. Stuff the Spring onions and Ginger slices into the cavity. Tie the two legs together with kitchen twine to help cover the cavity. Leave the marinated chicken to air dry in the refrigerator for at least 6-8 hours or overnight.</li>
+                    <li>Take the chicken out 30-45 mins before roasting to allow it to reach room temperature. Preheat oven to 220 degrees Celsius. When the oven is hot enough, turn it down to 200 degrees Celsius and place the roasting pan with chicken into the oven for 20 minutes. After 20 minutes, reduce the heat to 180 degrees Celsius and roast for a further 30-45 minutes (depending on the size of the chicken) until the skin is crisp and dark brown in color. Once done, take the chicken out to rest before cutting it into pieces.</li>
                 </ol>
             </section>
+
+            <!-- Char Siew Recipe Section -->
             <section class="subpage" id="subpage3">
                 <button class="backbtn">Back to Ingredients and Recipe</button>
                 <h3>Char Siew</h3>
                 <p>Details about char siew...</p>
-                <img src="images/charsiew.jpg" alt="Chicken Rice"> <!-- Image of Chicken Rice -->
+                <img src="images/page1/charsiew.jpg" alt="Chicken Rice"> <!-- Image of Chicken Rice -->
                 <h3>Ingredients for Char Siew:</h3>
                 <ul>
-                    <!-- List of ingredients for Chicken -->
+                    <!-- List of ingredients for Char Siew -->
                     <li>3 Boneless chicken thighs</li>
                     <li>2 tbsp Light Soy sauce</li>
                     <li>2 tbsp Rice wine</li>
@@ -164,6 +165,8 @@
                     <li>Add in honey last, just to give a final coat to the chicken. This gives the chicken a shiny glaze and a hint of honey sweetness.</li>
                 </ol>
             </section>
+
+            <!-- Watch How to Make Chicken Rice Section -->
             <section class="subpage" id="subpage4">
                 <button class="backbtn">Back to Ingredients and Recipe</button>
                 <h3>Watch how to make Chicken Rice</h3>
@@ -172,7 +175,9 @@
                 </div>
             </section>
         </div>
-        <div class="page" id="page2"> <!-- Popular Restaurants and Stalls page -->
+
+        <!-- Popular Restaurants and Stalls page -->
+        <div class="page" id="page2">
             <section>
                 <h2>Popular Restaurants and Stalls</h2>
                 <p>Here are some popular places where you can enjoy Chicken Rice:</p>
@@ -180,7 +185,7 @@
                     <div class="section" id="restaurant1">
                         <h3>Tiong Bahru Hainanese Boneless Chicken Rice</h3>
                         <p><a href="https://maps.app.goo.gl/UXm2gN8ShW1iYsZ16" id="restaurant1link" target="_blank">Locate Shop</a></p>
-                        <img src="images/tb.jpg" alt="Tiong Bahru Hainanese Boneless Chicken Rice">
+                        <img src="images/shops/tb.jpg" alt="Tiong Bahru Hainanese Boneless Chicken Rice">
                         <p>Located in the heart of Tiong Bahru, this stall is famous for its succulent, boneless chicken and fragrant rice. Established over 20 years ago, it remains a favorite among locals and tourists alike.</p>
                         <p><strong>Customer Reviews:</strong> "The best chicken rice I've ever had!" - Jane Doe</p>
                         <p><strong>Signature Dish:</strong> Hainanese Boneless Chicken Rice</p>
@@ -190,7 +195,7 @@
                     <div class="section" id="restaurant2">
                         <h3>Hawker Chan Soya Sauce Chicken Rice & Noodle</h3>
                         <p><a href="https://maps.app.goo.gl/f874GVU2gHmveQmx6" id="restaurant2link" target="_blank">Locate Shop</a></p>
-                        <img src="images/hawkerchan.jpg" alt="Hawker Chan Soya Sauce Chicken Rice & Noodle">
+                        <img src="images/shops/hawkerchan.jpg" alt="Hawker Chan Soya Sauce Chicken Rice & Noodle">
                         <p>Hawker Chan is world-renowned for its Michelin-starred soya sauce chicken. With affordable prices and exceptional taste, it’s a must-visit for any chicken rice lover.</p>
                         <p><strong>Customer Reviews:</strong> "Incredible value for a Michelin-star meal!" - John Smith</p>
                         <p><strong>Signature Dish:</strong> Soya Sauce Chicken Rice</p>
@@ -200,7 +205,7 @@
                     <div class="section" id="restaurant3">
                         <h3>Ji De Lai Hainanese Chicken Rice</h3>
                         <p><a href="https://maps.app.goo.gl/m8ahxUzE8FSDE3Xt6" id="restaurant3link" target="_blank">Locate Shop</a></p>
-                        <img src="images/jdl.jpg" alt="Ji De Lai Hainanese Chicken Rice">
+                        <img src="images/shops/jdl.jpg" alt="Ji De Lai Hainanese Chicken Rice">
                         <p>Ji De Lai offers a traditional Hainanese chicken rice experience. Known for its tender chicken and rich, flavorful rice, it's a beloved spot for many.</p>
                         <p><strong>Customer Reviews:</strong> "Authentic and delicious!" - Mary Lee</p>
                         <p><strong>Signature Dish:</strong> Hainanese Chicken Rice</p>
@@ -211,7 +216,8 @@
             </section>
         </div>
 
-        <div class="page" id="page3"> <!-- Watch How to Make Chicken Rice page -->
+        <!-- History of Chicken Rice page -->
+        <div class="page" id="page3">
             <section>
                 <h2 id="history-title">History of Chicken Rice</h2>
                 <div class="timeline-container">
@@ -331,8 +337,11 @@
                 </div>
             </section>
         </div>
-        <div class="page" id="page4"> <!-- Chicken Rice Cooking Game page -->
+
+        <!-- Chicken Rice Cooking Game page -->
+        <div class="page" id="page4">
             <div class="game-container">
+                <!-- Chicken Rice Cooking Game Section -->
                 <section id="game">
                     <h2>Chicken Rice Cooking Game</h2>
                     <div id="instructions">
@@ -354,17 +363,19 @@
                     <div id="status">
                         <div class="control-group">
                             <p id="chickenStatus">Chicken: Raw</p> <!-- Initial status of Chicken -->
-                            <img id="imageChickenStatus" src="images/raw_chicken.jpg" alt="Chicken Status"> <!-- Image of raw chicken -->
+                            <img id="imageChickenStatus" src="images/game/raw_chicken.jpg" alt="Chicken Status"> <!-- Image of raw chicken -->
                         </div>
                         <div class="control-group">
                             <p id="riceStatus">Rice: Uncooked</p> <!-- Initial status of Rice -->
-                            <img id="imageRiceStatus" src="images/uncooked_rice.jpg" alt="Rice Status"> <!-- Image of uncooked rice -->
+                            <img id="imageRiceStatus" src="images/game/uncooked_rice.jpg" alt="Rice Status"> <!-- Image of uncooked rice -->
                         </div>
                         <p id="score">Score: 0</p> <!-- Initial score -->
                     </div>
                     <div id="result"></div> <!-- Area to display result of the game -->
                     <div id="restartGame">Restart Game</div> <!-- Button to restart the game -->
                 </section>
+                
+                <!-- Trap the Chicken Game Section -->
                 <section id="trap-the-chicken">
                     <h2>Trap the Chicken</h2>
                     <div id="instructions">
@@ -379,6 +390,8 @@
 
     <!-- Footer -->
     <footer>
+        <h2>Scan for Mobile Version</h2>
+        <img src="images/qr.png" alt="Scan QR code" class="qr-code">
         <p>&copy; 2024 Chicken Rice. All rights reserved.</p> <!-- Footer text -->
     </footer>
 
