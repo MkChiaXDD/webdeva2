@@ -135,6 +135,10 @@ footer {
     position: relative;
 }
 
+footer h2 {
+    display: none;
+}
+
 .qr-code {
     display: none; /* Hide by default */
     margin-top: 10px;
@@ -146,6 +150,9 @@ footer {
 @media screen and (min-width: 800px) {
     .qr-code {
         display: block; /* Show when screen width is above 800px */
+    }
+    footer h2 {
+        display: none;
     }
 }
 
